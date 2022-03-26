@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "256711739200",
+    "firebase_url": "https://xd-expense-tracker-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "xd-expense-tracker",
+    "storage_bucket": "xd-expense-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256711739200:android:023aeeb01f890235d79ca5",
+        "android_client_info": {
+          "package_name": "com.alphardx.finnex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "256711739200-afo67vq5ifd0jci19n9apmskr4qaimck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-kVFMyLaJHWCEfmf_3GCn8aSf03zXfbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "256711739200-afo67vq5ifd0jci19n9apmskr4qaimck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
