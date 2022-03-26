@@ -12,14 +12,14 @@ packages:
     dependency: transitive
     description:
       name: boolean_selector
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
   characters:
     dependency: transitive
     description:
       name: characters
-      url: "https://pub.flutter-io.cn"
+      url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
   charcode:
@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
+  cron:
+    dependency: "direct main"
+    description:
+      name: cron
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.4.1"
   crypto:
     dependency: transitive
     description:
@@ -85,6 +92,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.10"
   fake_async:
     dependency: transitive
     description:
@@ -92,6 +106,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+
   firebase_auth:
     dependency: "direct main"
     description:
@@ -246,14 +261,43 @@ packages:
       name: permission_handler
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "9.2.0"
+  permission_handler_android:
+    dependency: transitive
+    description:
+      name: permission_handler_android
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.0.2+1"
+  permission_handler_apple:
+    dependency: transitive
+    description:
+      name: permission_handler_apple
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.0.3"
+=======
     version: "5.1.0+2"
+>>>>>>> 6844d065154996d0ba1ea9628daa4f32422b8b23
   permission_handler_platform_interface:
     dependency: transitive
     description:
       name: permission_handler_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "3.7.0"
+  permission_handler_windows:
+    dependency: transitive
+    description:
+      name: permission_handler_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
+=======
     version: "2.0.2"
+>>>>>>> 6844d065154996d0ba1ea9628daa4f32422b8b23
   plugin_platform_interface:
     dependency: transitive
     description:
