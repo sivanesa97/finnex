@@ -3,11 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 class AuthDb {
   String get uiD {
     try {
-      var userId;
-      FirebaseAuth.instance
-          .currentUser()
-          .then((FirebaseUser user) => {userId = user.uid});
-      return userId;
+      final uId = FirebaseAuth.instance.currentUser.uid;
+      return uId;
     } catch (e) {
       return "null";
     }
