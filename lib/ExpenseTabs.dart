@@ -41,15 +41,15 @@ class _ExpenseTabState extends State<ExpenseTab> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.account_balance),
             label: 'Income',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.shopping_bag),
             label: 'Expenses',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.verified_user),
+            icon: Icon(Icons.credit_card),
             label: 'Transfers',
           ),
         ],

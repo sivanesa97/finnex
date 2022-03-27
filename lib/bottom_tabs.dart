@@ -16,17 +16,17 @@ class TabNavigationItem {
   static List<TabNavigationItem> get items => [
         TabNavigationItem(
           page: ExpensePage(),
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.account_balance),
           title: Text("Income"),
         ),
         TabNavigationItem(
           page: ExpensePage(),
-          icon: Icon(Icons.search),
+          icon: Icon(Icons.shopping_bag),
           title: Text("Expense"),
         ),
         TabNavigationItem(
           page: ExpensePage(),
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.credit_card),
           title: Text("Transfers"),
         ),
       ];

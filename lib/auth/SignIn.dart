@@ -38,6 +38,12 @@ class _LoginState extends State<SignIn> {
                 color: Colors.white,
                 child: new Text("Sign In"),
                 onPressed: () async {
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) => AccountPage()));
+                  var uid = FirebaseAuth.instance.currentUser.uid;
+                  print(uid);
                   FirebaseAuth.instance.signOut();
                   GoogleSignInAccount account = await GoogleSignIn().signIn();
                   final GoogleSignInAuthentication? googleAuth =

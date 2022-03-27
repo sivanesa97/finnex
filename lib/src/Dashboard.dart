@@ -1,6 +1,7 @@
 import 'package:finnex/ExpenseTabs.dart';
 import 'package:finnex/auth/SignIn.dart';
 import 'package:finnex/expenseTrack.dart';
+import 'package:finnex/src/screen/Accounttrack.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:finnex/side_menu.dart';
@@ -47,6 +48,10 @@ class _DashboardState extends State<Dashboard> {
                   'Accounts',
                   style: TextStyle(color: Colors.white),
                 ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AccountPage()));
+                },
                 leading: Icon(
                   Icons.account_balance,
                   color: Colors.white,

@@ -63,7 +63,6 @@ class AccountState extends State<AccountPage> {
                             Account.removeAt(index);
                             Balance.removeAt(index);
                           });
-                          print(Balance);
                         },
                       )
                     ],
