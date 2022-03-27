@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:finnex/auth/SmsPermission.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-class SignIn extends StatefulWidget {
+class SmsPermission extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  SmsState createState() => SmsState();
 }
 
-class _LoginState extends State<SignIn> {
+class SmsState extends State<SmsPermission> {
   final _formKey = GlobalKey<FormState>();
   String userName = "";
   String password = "";
@@ -21,7 +21,7 @@ class _LoginState extends State<SignIn> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 470),
+              SizedBox(height: 490),
               MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.00)),
@@ -30,10 +30,18 @@ class _LoginState extends State<SignIn> {
                 // color: Theme.of(context).primaryColorDark,
                 textColor: Colors.black,
                 color: Colors.white,
-                child: new Text("Sign In"),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SmsPermission()));
+                child: new Text("Allow"),
+                onPressed: () async {
+                  var status = await Permission.sms.status;
+                  if (status.isGranted) {
+                  } else {
+                    Map<Permission, PermissionStatus> statuses = await [
+                      Permission.sms,
+                      Permission.location,
+                    ].request().then((value) => {});
+                  }
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => SmsPermission()));
                 },
               ),
             ],
@@ -41,7 +49,7 @@ class _LoginState extends State<SignIn> {
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("images/bg.gif"), fit: BoxFit.fill),
+              image: AssetImage("images/sms.gif"), fit: BoxFit.fill),
         ),
       ),
     );
