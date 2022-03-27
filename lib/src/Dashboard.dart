@@ -7,11 +7,12 @@ class Dashboard extends StatefulWidget {
   _DashboardState createState() => _DashboardState();
 }
 
-@override
 void initState() async {
   List messages = [];
   SmsQuery query = new SmsQuery();
-  await query.getAllSms.then((value) => {print(value.length)});
+  await query.getAllSms.then((value) => {
+    
+  });
 }
 
 class _DashboardState extends State<Dashboard> {
