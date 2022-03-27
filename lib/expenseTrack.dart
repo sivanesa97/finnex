@@ -12,7 +12,7 @@ class ExpensePage extends StatefulWidget {
 class _ExpensePageState extends State<ExpensePage> {
   @override
   Widget build(BuildContext context) {
-    final List<String> Account = <String>['SBI', 'IOB', 'Indain Bank', 'BOB'];
+    final List<String> Account = <String>['SBI', 'IOB', 'Indian Bank', 'BOB'];
     final List<String> Balance = <String>[
       "1,200",
       "4,000",
