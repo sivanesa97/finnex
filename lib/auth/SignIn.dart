@@ -1,3 +1,4 @@
+import 'package:finnex/src/Dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -44,9 +45,15 @@ class _LoginState extends State<SignIn> {
                   );
                   await FirebaseAuth.instance
                       .signInWithCredential(credential)
-                      .then((value) => print(value));
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => SmsPermission()));
+                      .then((value) => {
+                            if (value.user != null)
+                              {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Dashboard()))
+                              }
+                          });
                 },
               ),
             ],
