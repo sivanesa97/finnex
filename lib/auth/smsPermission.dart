@@ -1,15 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:finnex/auth/SmsPermission.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-class SignIn extends StatefulWidget {
+class SmsPermission extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  SmsState createState() => SmsState();
 }
 
-class _LoginState extends State<SignIn> {
+class SmsState extends State<SmsPermission> {
   final _formKey = GlobalKey<FormState>();
   String userName = "";
   String password = "";
@@ -24,7 +21,7 @@ class _LoginState extends State<SignIn> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 470),
+              SizedBox(height: 490),
               MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.00)),
@@ -33,18 +30,18 @@ class _LoginState extends State<SignIn> {
                 // color: Theme.of(context).primaryColorDark,
                 textColor: Colors.black,
                 color: Colors.white,
-                child: new Text("Sign In"),
+                child: new Text("Allow"),
                 onPressed: () async {
-                  GoogleSignInAccount account = await GoogleSignIn().signIn();
-                  final GoogleSignInAuthentication? googleAuth =
-                      await account.authentication;
-                  final credential = GoogleAuthProvider.credential(
-                    accessToken: googleAuth?.accessToken,
-                    idToken: googleAuth?.idToken,
-                  );
-                  await FirebaseAuth.instance
-                      .signInWithCredential(credential)
-                      .then((value) => print(value));
+                  var status = await Permission.sms.status;
+                  if (status.isGranted) {
+                  } else {
+                    Map<Permission, PermissionStatus> statuses = await [
+                      Permission.sms,
+                    ].request();
+                    statuses.forEach((key, value) {
+                      print(key.status);
+                    });
+                  }
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => SmsPermission()));
                 },
@@ -54,7 +51,7 @@ class _LoginState extends State<SignIn> {
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("images/bg.gif"), fit: BoxFit.fill),
+              image: AssetImage("images/sms.gif"), fit: BoxFit.fill),
         ),
       ),
     );
