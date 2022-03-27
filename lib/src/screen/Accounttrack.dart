@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:finnex/auth/SmsPermission.dart';
-import 'package:finnex/src/screen/Accounttrack.dart';
 
-
-class SignIn extends StatefulWidget {
+class AccountPage extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+   AccountState createState() => AccountState();
 }
 
-class _LoginState extends State<SignIn> {
-  final _formKey = GlobalKey<FormState>();
-  String userName = "";
-  String password = "";
-  bool invisible = true;
+class AccountState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +28,7 @@ class _LoginState extends State<SignIn> {
                 child: new Text("Sign In"),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AccountPage() ));
+                      MaterialPageRoute(builder: (context) => AccountPage()));
                 },
               ),
             ],

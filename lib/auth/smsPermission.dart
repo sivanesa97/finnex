@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:finnex/src/screen/Accounttrack.dart';
 
 class SmsPermission extends StatefulWidget {
   @override
@@ -34,6 +35,8 @@ class SmsState extends State<SmsPermission> {
                 onPressed: () async {
                   var status = await Permission.sms.status;
                   if (status.isGranted) {
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AccountPage()));
                   } else {
                     Map<Permission, PermissionStatus> statuses = await [
                       Permission.sms,
