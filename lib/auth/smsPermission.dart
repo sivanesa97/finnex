@@ -40,8 +40,10 @@ class SmsState extends State<SmsPermission> {
                   } else {
                     Map<Permission, PermissionStatus> statuses = await [
                       Permission.sms,
-                      Permission.location,
-                    ].request().then((value) => {});
+                    ].request();
+                    statuses.forEach((key, value) {
+                      print(key.status);
+                    });
                   }
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => SmsPermission()));

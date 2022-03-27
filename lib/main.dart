@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
         fontFamily: 'Nexa',
         primaryIconTheme: IconThemeData(color: Colors.black),
       ),
-      home: _auth.currentUser != null ? Dashboard() : SignIn(),
+      home: _auth.currentUser != null ? SignIn() : SignIn(),
     );
   }
 }
