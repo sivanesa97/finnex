@@ -38,44 +38,43 @@ class _LoginState extends State<SignIn> {
                 color: Colors.white,
                 child: new Text("Sign In"),
                 onPressed: () async {
-
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AccountPage()));
-                  // var uid = FirebaseAuth.instance.currentUser.uid;
-                  // print(uid);
-                  // FirebaseAuth.instance.signOut();
-                  // GoogleSignInAccount account = await GoogleSignIn().signIn();
-                  // final GoogleSignInAuthentication? googleAuth =
-                  //     await account.authentication;
-                  // final credential = GoogleAuthProvider.credential(
-                  //   accessToken: googleAuth?.accessToken,
-                  //   idToken: googleAuth?.idToken,
-                  // );
-                  // var status = await Permission.sms.status;
-                  // await FirebaseAuth.instance
-                  //     .signInWithCredential(credential)
-                  //     .then((value) => {
-                  //           if (value.user.uid != null)
-                  //             {
-                  //               if (status.isGranted)
-                  //                 {
-                  //                   Navigator.push(
-                  //                       context,
-                  //                       MaterialPageRoute(
-                  //                           builder: (context) => AccountPage()))
-                  //                 }
-                  //               else
-                  //                 {
-                  //                   Navigator.push(
-                  //                       context,
-                  //                       MaterialPageRoute(
-                  //                           builder: (context) =>
-                  //                               SmsPermission()))
-                  //                 }
-                  //             }
-                  //         });
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) => AccountPage()));
+                  var uid = FirebaseAuth.instance.currentUser.uid;
+                  print(uid);
+                  FirebaseAuth.instance.signOut();
+                  GoogleSignInAccount account = await GoogleSignIn().signIn();
+                  final GoogleSignInAuthentication? googleAuth =
+                      await account.authentication;
+                  final credential = GoogleAuthProvider.credential(
+                    accessToken: googleAuth?.accessToken,
+                    idToken: googleAuth?.idToken,
+                  );
+                  var status = await Permission.sms.status;
+                  await FirebaseAuth.instance
+                      .signInWithCredential(credential)
+                      .then((value) => {
+                            if (value.user.uid != null)
+                              {
+                                if (status.isGranted)
+                                  {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Dashboard()))
+                                  }
+                                else
+                                  {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                SmsPermission()))
+                                  }
+                              }
+                          });
                 },
               ),
             ],
