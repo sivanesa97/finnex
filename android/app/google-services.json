@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "256711739200-jjlpra37sor2geniqkdccicqjorqrgru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alphardx.finnex",
+            "certificate_hash": "ca073481d6fc832e19f2b70bbb4ff4fe3db6cb2b"
+          }
+        },
+        {
           "client_id": "256711739200-afo67vq5ifd0jci19n9apmskr4qaimck.apps.googleusercontent.com",
           "client_type": 3
         }
